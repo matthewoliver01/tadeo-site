@@ -112,13 +112,11 @@ const Contact = () => {
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-white mt-1" />
                   <div>
-                    <p className="text-white font-medium">Office</p>
+                    <p className="text-white font-medium">Address</p>
                     <p className="text-zinc-200">
-                      3545 Ellicott Mills Drive
+                      5218 Eliots Oak Rd
                       <br />
-                      Building A1, Suite 200
-                      <br />
-                      Ellicott City, MD 21043
+                      Columbia, MD 21044
                     </p>
                   </div>
                 </div>
