@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl">
-      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 sm:px-6">
+      <div className="bg-zinc-900 border border-zinc-700/50 rounded-full px-4 sm:px-6 shadow-lg shadow-black/20">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
@@ -39,8 +39,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     isActive(link.path)
-                      ? "bg-white/20 text-white"
-                      : "text-zinc-300 hover:text-white hover:bg-white/10"
+                      ? "bg-zinc-700 text-white"
+                      : "text-zinc-300 hover:text-white hover:bg-zinc-800"
                   }`}
                 >
                   {link.name}
@@ -68,7 +68,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isOpen && (
         <div className="md:hidden mt-2">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-3 py-3 space-y-1">
+          <div className="bg-zinc-900 border border-zinc-700/50 rounded-2xl px-3 py-3 space-y-1 shadow-lg shadow-black/20">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -76,8 +76,8 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 ${
                   isActive(link.path)
-                    ? "bg-white/20 text-white"
-                    : "text-zinc-300 hover:text-white hover:bg-white/10"
+                    ? "bg-zinc-700 text-white"
+                    : "text-zinc-300 hover:text-white hover:bg-zinc-800"
                 }`}
               >
                 {link.name}

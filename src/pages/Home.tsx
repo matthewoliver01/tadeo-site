@@ -37,14 +37,14 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-base font-medium text-white hover:bg-white/20 hover:scale-105 transition-all duration-200"
+                className="group inline-flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
               >
                 Get Started
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-base font-medium text-zinc-300 hover:text-white hover:bg-white/10 hover:scale-105 transition-all duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 bg-zinc-800 border border-zinc-700/50 rounded-full text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-700 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
               >
                 Learn More
               </Link>

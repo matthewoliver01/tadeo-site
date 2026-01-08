@@ -18,7 +18,7 @@ const Layout = () => {
       >
         <Silk
           color="#1A2633"
-          speed={20}
+          speed={10}
           scale={1.5}
           noiseIntensity={1.2}
           rotation={0}

@@ -90,7 +90,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-8 shadow-lg shadow-black/20">
               <h3 className="text-xl font-semibold text-white mb-6">
                 Contact Information
               </h3>
@@ -130,7 +130,7 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8">
+            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-8 shadow-lg shadow-black/20">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label
@@ -147,7 +147,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={status === "loading"}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-colors disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
                     placeholder="Your Name"
                   />
                 </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={status === "loading"}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-colors disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -185,7 +185,7 @@ const Contact = () => {
                     required
                     disabled={status === "loading"}
                     rows={4}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-transparent transition-colors resize-none disabled:opacity-50"
+                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors resize-none disabled:opacity-50"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -216,7 +216,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full flex items-center justify-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-base font-medium text-white hover:bg-white/20 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100"
+                  className="w-full flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100 shadow-lg shadow-black/20"
                 >
                   {status === "loading" ? (
                     <>

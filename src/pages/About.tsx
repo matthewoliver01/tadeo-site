@@ -68,15 +68,17 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Who We Are
             </h1>
-            <p className="text-xl text-zinc-400 leading-relaxed">
-              Tadeo Services was created in October of 2020. Jennifer Medillin,
-              the owner and founder, was looking for a new career venture during
-              a time of uncertainty. While utilizing the resources around her,
-              she was able to enhance her expertise and expand the business. The
-              company that started as a one-woman-show has grown to a small
-              team. Tadeo Services has 50+ years of work experience that
-              includes military veterans.
-            </p>
+            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 shadow-lg shadow-black/20">
+              <p className="text-xl text-white leading-relaxed">
+                Tadeo Services was created in October of 2020. Jennifer
+                Medillin, the owner and founder, was looking for a new career
+                venture during a time of uncertainty. While utilizing the
+                resources around her, she was able to enhance her expertise and
+                expand the business. The company that started as a
+                one-woman-show has grown to a small team. Tadeo Services has 50+
+                years of work experience that includes military veterans.
+              </p>
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -107,7 +109,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl h-96 flex items-center justify-center">
+            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl h-96 flex items-center justify-center shadow-lg shadow-black/20 overflow-hidden">
               <img
                 src="/dinner-picture.webp"
                 alt="Tadeo Company Dinner 2025"
@@ -121,7 +123,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
+            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 shadow-lg shadow-black/20">
               <h3 className="text-xl font-semibold text-white mb-4">
                 What is Important to Us
               </h3>
@@ -159,9 +161,9 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="h-full"
               >
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 h-full hover:bg-white/15 hover:scale-[1.02] transition-all duration-300">
+                <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 h-full hover:bg-zinc-750 hover:border-zinc-600/50 hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-black/20">
                   <div className="flex items-center mb-6">
-                    <div className="p-3 bg-white/10 rounded-lg mr-4">
+                    <div className="p-3 bg-zinc-700 rounded-lg mr-4">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold text-white">
