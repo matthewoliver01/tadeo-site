@@ -9,45 +9,60 @@ const Home = () => {
       <section className="relative overflow-hidden min-h-[600px] pt-20">
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <div className="md:w-2/3">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6"
-            >
-              Don't put off tomorrow what you can get done Tadeo!
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl text-white mb-8 max-w-2xl"
-            >
-              Located in Columbia, MD, we are a Women Veteran Owned Small
-              Business delivering trust, quality, and results through expert
-              Program, Contract, and Risk Management services to private,
-              government, state, and federal clients.
-            </motion.p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6"
+              >
+                Don't put off tomorrow what you can get done Tadeo!
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-xl text-white mb-8 max-w-2xl"
+              >
+                Located in Columbia, MD, we are a Women Veteran Owned Small
+                Business delivering trust, quality, and results through expert
+                Program, Contract, and Risk Management services to private,
+                government, state, and federal clients.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-col sm:flex-row gap-4"
+              >
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-zinc-800 border border-zinc-700/50 rounded-full text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-700 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
+                >
+                  Learn More
+                </Link>
+              </motion.div>
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center md:justify-end"
             >
-              <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/about"
-                className="inline-flex items-center justify-center px-6 py-3 bg-zinc-800 border border-zinc-700/50 rounded-full text-base font-medium text-zinc-300 hover:text-white hover:bg-zinc-700 hover:scale-105 transition-all duration-200 shadow-lg shadow-black/20"
-              >
-                Learn More
-              </Link>
+              <img
+                src="/tadeo-logo-white.webp"
+                alt="Tadeo Services logo"
+                className="w-full max-w-[460px] lg:max-w-[520px] h-auto object-contain"
+              />
             </motion.div>
           </div>
         </div>

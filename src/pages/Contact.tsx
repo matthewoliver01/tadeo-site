@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import GlassSurface from "../components/GlassSurface";
 
 // Replace these with your EmailJS credentials
 const EMAILJS_SERVICE_ID = "service_y9sqaqu";
@@ -42,7 +43,7 @@ const Contact = () => {
           message: formData.message,
           to_name: "Tadeo Services",
         },
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       );
 
       setStatus("success");
@@ -61,7 +62,7 @@ const Contact = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -90,38 +91,56 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-8"
           >
-            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-8 shadow-lg shadow-black/20">
-              <h3 className="text-xl font-semibold text-white mb-6">
-                Contact Information
-              </h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <Mail className="h-6 w-6 text-white mt-1" />
-                  <div>
-                    <p className="text-white font-medium">Email</p>
-                    <p className="text-zinc-200">info@tadeoservices.com</p>
+            <GlassSurface
+              width="100%"
+              height="auto"
+              borderRadius={16}
+              className="shadow-lg shadow-black/20"
+            >
+              <div className="w-full p-8">
+                <h3 className="text-xl font-semibold text-white mb-6">
+                  Contact Information
+                </h3>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <Mail className="h-6 w-6 text-white mt-1" />
+                    <div>
+                      <p className="text-white font-medium">Email</p>
+                      <p className="text-zinc-200">info@tadeoservices.com</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <Phone className="h-6 w-6 text-white mt-1" />
-                  <div>
-                    <p className="text-white font-medium">Phone</p>
-                    <p className="text-zinc-200">+1 (252) 670-8790</p>
+                  <div className="flex items-start space-x-4">
+                    <Phone className="h-6 w-6 text-white mt-1" />
+                    <div>
+                      <p className="text-white font-medium">Phone</p>
+                      <p className="text-zinc-200">+1 (252) 670-8790</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <MapPin className="h-6 w-6 text-white mt-1" />
-                  <div>
-                    <p className="text-white font-medium">Address</p>
-                    <p className="text-zinc-200">
-                      5218 Eliots Oak Rd
-                      <br />
-                      Columbia, MD 21044
-                    </p>
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="h-6 w-6 text-white mt-1" />
+                    <div>
+                      <p className="text-white font-medium">Main Address</p>
+                      <p className="text-zinc-200">
+                        5218 Eliots Oak Rd
+                        <br />
+                        Columbia, MD 21044
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="h-6 w-6 text-white mt-1" />
+                    <div>
+                      <p className="text-white font-medium">Office</p>
+                      <p className="text-zinc-200">
+                        3525 Ellicott Mills Dr Suite J
+                        <br />
+                        Ellicott City, MD 21043
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </GlassSurface>
           </motion.div>
 
           {/* Contact Form */}
@@ -130,108 +149,115 @@ const Contact = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-8 shadow-lg shadow-black/20">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-zinc-300 mb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    disabled={status === "loading"}
-                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-zinc-300 mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={status === "loading"}
-                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-zinc-300 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    disabled={status === "loading"}
-                    rows={4}
-                    className="w-full px-4 py-3 bg-zinc-900 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors resize-none disabled:opacity-50"
-                    placeholder="How can we help you?"
-                  />
-                </div>
+            <GlassSurface
+              width="100%"
+              height="auto"
+              borderRadius={16}
+              className="shadow-lg shadow-black/20"
+            >
+              <div className="w-full p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-zinc-300 mb-2"
+                    >
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      disabled={status === "loading"}
+                      className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-zinc-300 mb-2"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      disabled={status === "loading"}
+                      className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors disabled:opacity-50"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-zinc-300 mb-2"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      disabled={status === "loading"}
+                      rows={4}
+                      className="w-full px-4 py-3 bg-zinc-900/80 border border-zinc-700/50 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-zinc-500 focus:border-transparent transition-colors resize-none disabled:opacity-50"
+                      placeholder="How can we help you?"
+                    />
+                  </div>
 
-                {/* Status Messages */}
-                {status === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-green-400 bg-green-400/10 px-4 py-3 rounded-xl"
-                  >
-                    <CheckCircle className="h-5 w-5" />
-                    <span>Message sent successfully!</span>
-                  </motion.div>
-                )}
-
-                {status === "error" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-400 bg-red-400/10 px-4 py-3 rounded-xl"
-                  >
-                    <AlertCircle className="h-5 w-5" />
-                    <span>{errorMessage}</span>
-                  </motion.div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="w-full flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100 shadow-lg shadow-black/20"
-                >
-                  {status === "loading" ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="ml-2 h-5 w-5" />
-                    </>
+                  {/* Status Messages */}
+                  {status === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-2 text-green-400 bg-green-400/10 px-4 py-3 rounded-xl"
+                    >
+                      <CheckCircle className="h-5 w-5" />
+                      <span>Message sent successfully!</span>
+                    </motion.div>
                   )}
-                </button>
-              </form>
-            </div>
+
+                  {status === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-2 text-red-400 bg-red-400/10 px-4 py-3 rounded-xl"
+                    >
+                      <AlertCircle className="h-5 w-5" />
+                      <span>{errorMessage}</span>
+                    </motion.div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    className="w-full flex items-center justify-center px-6 py-3 bg-zinc-700 border border-zinc-600/50 rounded-full text-base font-medium text-white hover:bg-zinc-600 hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:hover:scale-100 shadow-lg shadow-black/20"
+                  >
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="ml-2 h-5 w-5" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
+            </GlassSurface>
           </motion.div>
         </div>
       </div>

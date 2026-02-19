@@ -7,6 +7,7 @@ import {
   Truck,
   Activity,
 } from "lucide-react";
+import GlassSurface from "../components/GlassSurface";
 
 const About = () => {
   const services = [
@@ -68,17 +69,24 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Who We Are
             </h1>
-            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 shadow-lg shadow-black/20">
-              <p className="text-xl text-white leading-relaxed">
-                Tadeo Services was created in October of 2020. Jennifer
-                Medillin, the owner and founder, was looking for a new career
-                venture during a time of uncertainty. While utilizing the
-                resources around her, she was able to enhance her expertise and
-                expand the business. The company that started as a
-                one-woman-show has grown to a small team. Tadeo Services has 50+
-                years of work experience that includes military veterans.
-              </p>
-            </div>
+            <GlassSurface
+              width="100%"
+              height="auto"
+              borderRadius={16}
+              className="shadow-lg shadow-black/20"
+            >
+              <div className="w-full p-6">
+                <p className="text-xl text-white leading-relaxed">
+                  Tadeo Services was created in October of 2020. Jennifer
+                  Medillin, the owner and founder, was looking for a new career
+                  venture during a time of uncertainty. While utilizing the
+                  resources around her, she was able to enhance her expertise
+                  and expand the business. The company that started as a
+                  one-woman-show has grown to a small team. Tadeo Services has
+                  50+ years of work experience that includes military veterans.
+                </p>
+              </div>
+            </GlassSurface>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -89,7 +97,7 @@ const About = () => {
             <div className="flex flex-col items-center">
               <div className="w-48 h-48 bg-zinc-800 rounded-full flex items-center justify-center border-4 border-zinc-700 overflow-hidden shadow-xl mb-4">
                 <img
-                  src="/jennifer-medillin.webp"
+                  src="/jennifer-medillin.jpg"
                   alt="Jennifer Medillin, Owner"
                   className="w-full h-full object-cover"
                 />
@@ -109,13 +117,18 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl h-96 flex items-center justify-center shadow-lg shadow-black/20 overflow-hidden">
+            <GlassSurface
+              width="100%"
+              height={384}
+              borderRadius={16}
+              className="shadow-lg shadow-black/20 overflow-hidden"
+            >
               <img
                 src="/dinner-picture.webp"
                 alt="Tadeo Company Dinner 2025"
                 className="w-full h-full object-cover"
               />
-            </div>
+            </GlassSurface>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -123,20 +136,27 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 shadow-lg shadow-black/20">
-              <h3 className="text-xl font-semibold text-white mb-4">
-                What is Important to Us
-              </h3>
-              <p className="text-zinc-200 mb-4">
-                We are a firm believer in trust, quality, and results for all of
-                our clients: Private, Government, State, and Federal.
-              </p>
-              <p className="text-zinc-200">
-                We use our experience to assist our clients in managing their
-                project schedules, cost versus risk, maximizing profits, and
-                strengthening relationships.
-              </p>
-            </div>
+            <GlassSurface
+              width="100%"
+              height="auto"
+              borderRadius={16}
+              className="shadow-lg shadow-black/20"
+            >
+              <div className="w-full p-6">
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  What is Important to Us
+                </h3>
+                <p className="text-zinc-200 mb-4">
+                  We are a firm believer in trust, quality, and results for all
+                  of our clients: Private, Government, State, and Federal.
+                </p>
+                <p className="text-zinc-200">
+                  We use our experience to assist our clients in managing their
+                  project schedules, cost versus risk, maximizing profits, and
+                  strengthening relationships.
+                </p>
+              </div>
+            </GlassSurface>
           </motion.div>
         </div>
 
@@ -161,24 +181,34 @@ const About = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="h-full"
               >
-                <div className="bg-zinc-800 border border-zinc-700/50 rounded-2xl p-6 h-full hover:bg-zinc-750 hover:border-zinc-600/50 hover:scale-[1.02] transition-all duration-300 shadow-lg shadow-black/20">
-                  <div className="flex items-center mb-6">
-                    <div className="p-3 bg-zinc-700 rounded-lg mr-4">
-                      {service.icon}
+                <GlassSurface
+                  width="100%"
+                  height="100%"
+                  borderRadius={16}
+                  className="h-full shadow-lg shadow-black/20 transition-transform duration-300 hover:scale-[1.02]"
+                >
+                  <div className="w-full p-6 h-full">
+                    <div className="flex items-center mb-6">
+                      <div className="p-3 bg-zinc-700/70 rounded-lg mr-4">
+                        {service.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white">
+                        {service.category}
+                      </h3>
                     </div>
-                    <h3 className="text-xl font-bold text-white">
-                      {service.category}
-                    </h3>
+                    <ul className="space-y-3">
+                      {service.items.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start text-zinc-200"
+                        >
+                          <CheckCircle className="h-5 w-5 text-zinc-300 mr-3 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-3">
-                    {service.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start text-zinc-200">
-                        <CheckCircle className="h-5 w-5 text-zinc-300 mr-3 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </GlassSurface>
               </motion.div>
             ))}
           </div>
