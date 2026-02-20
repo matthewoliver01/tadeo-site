@@ -75,6 +75,7 @@ const Navbar = () => {
         <div className="md:hidden mt-2">
           <GlassSurface
             width="100%"
+            height="auto"
             borderRadius={16}
             className="shadow-lg shadow-black/20"
           >
